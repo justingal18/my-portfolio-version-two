@@ -80,6 +80,7 @@ body {
 .main-banner .hero-banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-bottom: 2px solid black;
 }
 .main-banner .hero-banner .left-hero-banner {
   display: flex;
@@ -114,7 +115,7 @@ body {
 .main-banner .hero-banner .left-hero-banner .available-status-container .available-status {
   color: #0aff70;
   font-size: 1rem;
-  font-weight: 1rem;
+  font-weight: 500;
 }
 .main-banner .hero-banner .left-hero-banner .hero-heading {
   padding-left: 20rem;
@@ -129,17 +130,65 @@ body {
   padding-left: 3.45rem;
   margin-top: 0.7rem;
 }
-.main-banner .hero-banner .right-hero-banner {
-  border: 1px solid black;
-}
 .main-banner .hero-banner .right-hero-banner .content-container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  border: 2px solid black;
-  height: 40vh;
-  width: 40vh;
+  position: relative;
+  left: 3rem;
+  top: 6.5rem;
+  height: 60vh;
+  width: 62vh;
+  row-gap: 0.5rem;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer {
+  display: grid;
+  grid-template-columns: 1fr 21rem;
+  height: 29rem;
+  width: 100%;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-first-content {
+  height: 100%;
+  width: inherit;
+  background-image: url("src/img/pexels-yankrukov-8837730.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content {
+  height: 100%;
+  width: inherit;
+  background-image: url("src/img/pexels-uncoveredlens-3620354.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer {
+  display: grid;
+  grid-template-columns: 21rem 1fr;
+  height: 13rem;
+  width: 100%;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content {
+  height: 100%;
+  width: inherit;
+  border: 2px solid blue;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content {
+  height: 100%;
+  width: inherit;
+  border: 2px solid white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 @keyframes slideUp {
