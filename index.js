@@ -150,7 +150,6 @@ const availableStatusContainer = createElement('section', {
 const availableStatusIcon = createElement('span', {
     id: 'available-status-icon',
     classList: ['available-status-icon', 'material-icons'],
-    textContent: 'check_circle',
 });
 
 const availableStatus = createElement('p', {
@@ -159,7 +158,15 @@ const availableStatus = createElement('p', {
     textContent: 'Available'
 });
 
+const goDownIcon = createElement('span', {
+    id: 'go-down-icon',
+    classList: ['go-down-icon', 'material-icons'],
+    textContent: 'arrow_downward',
+});
 
+goDownIcon.addEventListener('click', () => {
+    co
+});
 
 // Append sections to the body and to its respective parent sections
 
@@ -176,7 +183,7 @@ navSection.append(unorderedList);
 heroBanner.append(leftHeroBanner, rightHeroBanner);
 
 // Left Hero Banner
-leftHeroBanner.append(availableStatusContainer, heroHeading, subHeading);
+leftHeroBanner.append(availableStatusContainer, heroHeading, subHeading, goDownIcon);
 availableStatusContainer.append(availableStatusIcon, availableStatus);
 
 // Right Hero Banner
