@@ -99,14 +99,14 @@ const firstLayer = createElement('section', {
     classList: ['first-layer'],
 });
 
-const firstContent = createElement('section', {
-    id: 'first-layer-content',
-    classList: ['first-layer-content'],
+const firstLayerFirstContent = createElement('section', {
+    id: 'first-layer-first-content',
+    classList: ['first-layer-first-content'],
 });
 
-const secondContent = createElement('section', {
-    id: 'second-layer-content',
-    classList: ['second-layer-content'],
+const firstLayerSecondContent = createElement('section', {
+    id: 'first-layer-second-content',
+    classList: ['first-layer-second-content'],
 }); 
 
 const secondLayer = createElement('section', {
@@ -114,9 +114,14 @@ const secondLayer = createElement('section', {
     classList: ['second-layer'],
 });
 
-const secondLayerContent = createElement('section', {
-    id: 'second-layer-content',
-    classList: ['second-layer-content'],
+const secondLayerFirstContent = createElement('section', {
+    id: 'second-layer-first-content',
+    classList: ['second-layer-first-content'],
+});
+
+const secondLayerSecondContent = createElement('section', {
+    id: 'second-layer-second-content',
+    classList: ['second-layer-second-content'],
 });
 
 // Left Hero Banner
@@ -137,7 +142,7 @@ const subHeading = createElement('p', {
     textContent: 'I create responsive and user-friendly websites.',
 });
 
-const availableStatusContainer = createElement('sec', {
+const availableStatusContainer = createElement('section', {
     id: 'available-status-container',
     classList: ['available-status-container'], 
 });
@@ -145,6 +150,7 @@ const availableStatusContainer = createElement('sec', {
 const availableStatusIcon = createElement('span', {
     id: 'available-status-icon',
     classList: ['available-status-icon', 'material-icons'],
+    textContent: 'check_circle',
 });
 
 const availableStatus = createElement('p', {
@@ -172,3 +178,9 @@ heroBanner.append(leftHeroBanner, rightHeroBanner);
 // Left Hero Banner
 leftHeroBanner.append(availableStatusContainer, heroHeading, subHeading);
 availableStatusContainer.append(availableStatusIcon, availableStatus);
+
+// Right Hero Banner
+rightHeroBanner.append(contentContainer);
+contentContainer.append(firstLayer, secondLayer);
+firstLayer.append(firstLayerFirstContent, firstLayerSecondContent);
+secondLayer.append(secondLayerFirstContent, secondLayerSecondContent);

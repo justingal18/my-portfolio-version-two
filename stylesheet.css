@@ -132,6 +132,15 @@ body {
 .main-banner .hero-banner .right-hero-banner {
   border: 1px solid black;
 }
+.main-banner .hero-banner .right-hero-banner .content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid black;
+  height: 40vh;
+  width: 40vh;
+}
 
 @keyframes slideUp {
   0% {
