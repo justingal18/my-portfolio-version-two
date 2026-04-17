@@ -107,7 +107,73 @@ const firstLayerFirstContent = createElement('section', {
 const firstLayerSecondContent = createElement('section', {
     id: 'first-layer-second-content',
     classList: ['first-layer-second-content'],
-}); 
+});
+
+const firstImageContainer = createElement('section', {
+    id: 'first-image-container',
+    classList: ['first-image-container', 'slide', 'active'],
+});
+
+const secondImageContainer = createElement('section', {
+    id: 'second-image-container',
+    classList: ['second-image-container', 'slide'],
+});
+
+const thirdImageContainer = createElement('section', {
+    id: 'third-image-container',
+    classList: ['third-image-container', 'slide'],
+});
+
+// Logic behind of Image Horizontal Slider
+let currentindex = 0;
+
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot')
+
+function showSlide(index) {
+    if (index >= slides.length) { currentindex = 0; }
+    if (index < 0) { currentIndex = slides.length - 1; }
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[currentIndex].classList.add('active');
+    dots[currentIndex].classList.add('active');
+};
+
+function changeSlide(direction) {
+    currentIndex += direction;
+    showSlide(currentIndex);
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    showSlide(currentIndex);
+};
+
+setInterval(() => changeSlide(1), 3000)
+
+const dotPagination = createElement('section', {
+    id: 'dot-pagination',
+    classList: ['dot-pagination', 'active'],
+});
+
+const dot = [];
+
+for (let i = 1; i <= 3; i++) {
+    const dotSpan = createElement('span', {
+        id: `dot-${i}`,
+        classList: [`dot-${i}`]
+    });
+
+    dotSpan.style.width = '10px';
+    dotSpan.style.height = '10px';
+    dotSpan.style.margin = '3px';
+    dotSpan.style.backgroundColor = '#070707';
+    dotSpan.style.borderRadius = '50%';
+    dotSpan.style.cursor = 'pointer';
+    dot.push(dotSpan);
+};
 
 const secondLayer = createElement('section', {
     id: 'second-layer',
@@ -193,6 +259,14 @@ availableStatusContainer.append(availableStatusIcon, availableStatus);
 
 // Right Hero Banner
 rightHeroBanner.append(contentContainer);
+
 contentContainer.append(firstLayer, secondLayer);
+
 firstLayer.append(firstLayerFirstContent, firstLayerSecondContent);
+
+firstLayerSecondContent.append(firstImageContainer, secondImageContainer, thirdImageContainer, dotPagination);
+
+dotPagination.append(...dot);
+
 secondLayer.append(secondLayerFirstContent, secondLayerSecondContent);
+
