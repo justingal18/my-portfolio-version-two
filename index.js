@@ -53,7 +53,7 @@ items.forEach((text, index) => {
 
     const itemLink = createElement('a', {
         classList: ['menu'],
-        href: 'javascript:void(0);',
+        href: `#${text.key}`,
         target: '_blank',
         textContent: text.label,
     });
@@ -165,7 +165,12 @@ const goDownIcon = createElement('span', {
 });
 
 goDownIcon.addEventListener('click', () => {
-    co
+    const scrollTarget = document.getElementById('go-down-icon');
+
+    scrollTarget.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+    });
 });
 
 // Append sections to the body and to its respective parent sections
