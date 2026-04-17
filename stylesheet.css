@@ -84,7 +84,6 @@ body {
 .main-banner .hero-banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border-bottom: 2px solid #302929;
   margin-top: 6rem;
 }
 .main-banner .hero-banner .left-hero-banner {
@@ -161,15 +160,18 @@ body {
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer {
   display: grid;
   grid-template-columns: 1fr 21rem;
-  height: 29rem;
+  height: 40vh;
   width: 100%;
   -moz-column-gap: 0.5rem;
        column-gap: 0.5rem;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-first-content {
-  height: 100%;
+  height: inherit;
   width: inherit;
-  background-image: url("src/img/pexels-yankrukov-8837730.jpg");
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-first-content img {
+  height: inherit;
+  width: inherit;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -182,13 +184,14 @@ body {
   border-top: 2px solid #2bff00;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-rows: 1fr;
   position: relative;
   width: 100%;
   max-width: 100%;
   margin: auto;
-  height: 100%;
+  height: inherit;
+  animation: slideDown 2s ease-in 1.5s forwards;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .slide {
   display: none;
@@ -196,46 +199,52 @@ body {
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .slide.active {
   display: block;
 }
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .slide img {
+  height: 40vh;
+  width: 20.8rem;
+}
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .first-image-container {
-  height: inherit;
-  width: none;
-  background-image: url("src/img/pexels-uncoveredlens-3620354.jpg");
+  height: inhirit;
+  width: 100%;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .first-image-container img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-top-right-radius: 10px;
   transition: border 0.2s ease-in-out;
-  animation: slideDown 2s ease-in 1.5s forwards;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .second-image-container {
   height: inherit;
-  width: none;
-  background-image: url("src/img/pexels-badesaba-29459965.jpg");
+  width: inherit;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .second-image-container img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-bottom-right-radius: 10px;
   transition: border 0.2s ease-in-out;
-  animation: slideDown 2s ease-in 1.5s forwards;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .third-image-container {
-  height: inherit;
-  width: none;
-  background-image: url("src/img/pexels-furkanelveren-18410687.jpg");
+  border: 2px solid black;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .third-image-container img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border-top-right-radius: 10px;
   transition: border 0.2s ease-in-out;
-  animation: slideDown 2s ease-in 1.5s forwards;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination {
   display: flex;
   flex-direction: row;
   position: absolute;
-  top: 23rem;
+  top: 22rem;
   left: 9rem;
   z-index: 1;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-1.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-2.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot3.active {
+  background-color: #333;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content:hover {
   border-top: 2px solid #2bff00;

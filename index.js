@@ -104,6 +104,11 @@ const firstLayerFirstContent = createElement('section', {
     classList: ['first-layer-first-content'],
 });
 
+const firstLeftLayerImage = createElement('img', {
+    src: 'src/img/pexels-yankrukov-8837730.jpg',
+    alt: 'Collaboration'
+});
+
 const firstLayerSecondContent = createElement('section', {
     id: 'first-layer-second-content',
     classList: ['first-layer-second-content'],
@@ -114,9 +119,19 @@ const firstImageContainer = createElement('section', {
     classList: ['first-image-container', 'slide', 'active'],
 });
 
+const firstLayerRightFirstImage = createElement('img', {
+    src: 'src/img/pexels-uncoveredlens-3620354.jpg',
+    alt: 'First Image'
+});
+
 const secondImageContainer = createElement('section', {
     id: 'second-image-container',
     classList: ['second-image-container', 'slide'],
+});
+
+const firstLayerRightSecondImage = createElement('img', {
+    src: 'src/img/pexels-badesaba-29459965.jpg',
+    alt: 'Second Image'
 });
 
 const thirdImageContainer = createElement('section', {
@@ -124,14 +139,45 @@ const thirdImageContainer = createElement('section', {
     classList: ['third-image-container', 'slide'],
 });
 
+const firstLayerRightThirdImage = createElement('img', {
+    src: 'src/img/pexels-furkanelveren-18410687.jpg',
+    alt: 'Third Image'
+});
+
+const dot = [];
+for (let i = 1; i <= 3; i++) {
+    const dotSpan = createElement('span', {
+        id: `dot-${i}`,
+        classList: [`dot-${i}`, 'dot']
+    });
+
+    if (i === 1) {
+        dotSpan.onclick = () => goToSlide(0);
+    } else if (i === 2) {
+        dotSpan.onclick = () => goToSlide(1);
+    } else if (i === 3) {
+        dotSpan.onclick = () => goToSlide(2);
+    }
+    
+    dotSpan.style.display = 'inline-block'
+    dotSpan.style.width = '10px';
+    dotSpan.style.height = '10px';
+    dotSpan.style.margin = '3px';
+    dotSpan.style.backgroundColor = '#070707';
+    dotSpan.style.borderRadius = '50%';
+    dotSpan.style.cursor = 'pointer';
+    dot.push(dotSpan);
+};
+
+
 // Logic behind of Image Horizontal Slider
-let currentindex = 0;
+let currentIndex = 0;
 
 const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot')
 
 function showSlide(index) {
-    if (index >= slides.length) { currentindex = 0; }
+    if (index >= slides.length) { currentIndex = 0; }
     if (index < 0) { currentIndex = slides.length - 1; }
 
     slides.forEach(slide => slide.classList.remove('active'));
@@ -149,7 +195,7 @@ function changeSlide(direction) {
 function goToSlide(index) {
     currentIndex = index;
     showSlide(currentIndex);
-};
+}
 
 setInterval(() => changeSlide(1), 3000)
 
@@ -158,22 +204,6 @@ const dotPagination = createElement('section', {
     classList: ['dot-pagination', 'active'],
 });
 
-const dot = [];
-
-for (let i = 1; i <= 3; i++) {
-    const dotSpan = createElement('span', {
-        id: `dot-${i}`,
-        classList: [`dot-${i}`]
-    });
-
-    dotSpan.style.width = '10px';
-    dotSpan.style.height = '10px';
-    dotSpan.style.margin = '3px';
-    dotSpan.style.backgroundColor = '#070707';
-    dotSpan.style.borderRadius = '50%';
-    dotSpan.style.cursor = 'pointer';
-    dot.push(dotSpan);
-};
 
 const secondLayer = createElement('section', {
     id: 'second-layer',
@@ -264,7 +294,13 @@ contentContainer.append(firstLayer, secondLayer);
 
 firstLayer.append(firstLayerFirstContent, firstLayerSecondContent);
 
+firstLayerFirstContent.append(firstLeftLayerImage)
+
 firstLayerSecondContent.append(firstImageContainer, secondImageContainer, thirdImageContainer, dotPagination);
+
+firstImageContainer.append(firstLayerRightFirstImage)
+secondImageContainer.append(firstLayerRightSecondImage)
+thirdImageContainer.append(firstLayerRightThirdImage)
 
 dotPagination.append(...dot);
 

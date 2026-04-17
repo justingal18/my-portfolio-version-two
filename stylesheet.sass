@@ -76,7 +76,6 @@ body
     .hero-banner
         display: grid
         grid-template-columns: 1fr 1fr
-        border-bottom: 2px solid #302929
         margin-top: 6rem
         .left-hero-banner
             display: flex
@@ -145,71 +144,76 @@ body
                 .first-layer
                     display: grid
                     grid-template-columns: 1fr 21rem
-                    height: 29rem
+                    height: 40vh
                     width: 100%
                     column-gap: .5rem
                     .first-layer-first-content
-                        height: 100%
+                        height: inherit
                         width: inherit
-                        background-image: url('src/img/pexels-yankrukov-8837730.jpg')
-                        background-size: cover
-                        background-position: center
-                        background-repeat: no-repeat
-                        border-top-left-radius: 10px
-                        transition: border 0.2s ease-in-out
-                        animation: slideRight 2s ease-in 1.5s forwards
+                        img
+                            height: inherit
+                            width: inherit
+                            background-size: cover
+                            background-position: center
+                            background-repeat: no-repeat
+                            border-top-left-radius: 10px
+                            transition: border 0.2s ease-in-out
+                            animation: slideRight 2s ease-in 1.5s forwards
                     .first-layer-first-content:hover
                         border-left: 2px solid #2bff00
                         border-top: 2px solid #2bff00
                     .first-layer-second-content
-                        display: flex
-                        flex-direction: row
+                        display: grid
+                        grid-template-rows: 1fr
                         position: relative
                         width: 100%
                         max-width: 100%
                         margin: auto
-                        height: 100%
+                        height: inherit
+                        animation: slideDown 2s ease-in 1.5s forwards
                         .slide
                             display: none
                             &.active
                                 display: block
+                            img
+                                height: 40vh
+                                width: 20.8rem
                         .first-image-container
-                            height: inherit
-                            width: none
-                            background-image: url('src/img/pexels-uncoveredlens-3620354.jpg')
-                            background-size: cover
-                            background-position: center
-                            background-repeat: no-repeat
-                            border-top-right-radius: 10px
-                            transition: border 0.2s ease-in-out
-                            animation: slideDown 2s ease-in 1.5s forwards
+                                height: inhirit
+                                width: 100%
+                                img
+                                    background-size: cover
+                                    background-position: center
+                                    background-repeat: no-repeat
+                                    border-top-right-radius: 10px
+                                    transition: border 0.2s ease-in-out
                         .second-image-container
                             height: inherit
-                            width: none
-                            background-image: url('src/img/pexels-badesaba-29459965.jpg')
-                            background-size: cover
-                            background-position: center
-                            background-repeat: no-repeat
-                            border-bottom-right-radius: 10px
-                            transition: border 0.2s ease-in-out
-                            animation: slideDown 2s ease-in 1.5s forwards
+                            width: inherit
+                            img
+                                background-size: cover
+                                background-position: center
+                                background-repeat: no-repeat
+                                border-bottom-right-radius: 10px
+                                transition: border 0.2s ease-in-out
                         .third-image-container
-                            height: inherit
-                            width: none
-                            background-image: url('src/img/pexels-furkanelveren-18410687.jpg')
-                            background-size: cover
-                            background-position: center
-                            background-repeat: no-repeat
-                            border-top-right-radius: 10px
-                            transition: border 0.2s ease-in-out
-                            animation: slideDown 2s ease-in 1.5s forwards
+                            border: 2px solid black
+                            img
+                                background-size: cover
+                                background-position: center
+                                background-repeat: no-repeat
+                                border-top-right-radius: 10px
+                                transition: border 0.2s ease-in-out
                         .dot-pagination
                             display: flex
                             flex-direction: row
                             position: absolute
-                            top: 23rem
+                            top: 22rem
                             left: 9rem
                             z-index: 1
+                            .dot-1, .dot-2, .dot3
+                                &.active
+                                    background-color: #333 
                     .first-layer-second-content:hover
                         border-top: 2px solid #2bff00
                         border-right: 2px solid #2bff00
