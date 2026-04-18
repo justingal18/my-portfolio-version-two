@@ -159,7 +159,6 @@ for (let i = 1; i <= 3; i++) {
         dotSpan.onclick = () => goToSlide(2);
     }
     
-
     dot.push(dotSpan);
 };
 

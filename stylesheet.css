@@ -257,8 +257,11 @@ body {
   margin: 3px;
   background-color: #bbb;
   border-radius: 50%;
+  cursor: pointer;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-1.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-2.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-3.active {
+  height: 12px;
+  width: 12px;
   background-color: #2bff00;
   border-radius: 50%;
 }
