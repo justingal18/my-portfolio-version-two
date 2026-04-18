@@ -8,7 +8,6 @@
 body {
   font-family: "Arial, sans-serif";
   background-color: #929292;
-  height: 500vh;
 }
 
 .main-banner {
@@ -135,17 +134,18 @@ body {
   margin-top: 0.7rem;
 }
 .main-banner .hero-banner .left-hero-banner .go-down-icon {
-  border: 2px solid #2bff00;
+  border: 2px solid rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   background-color: #929292;
   font-size: 2.5rem;
   font-weight: 500;
   position: absolute;
-  top: 88vh;
+  top: 87vh;
   left: 58.5rem;
   animation: bounce 1s infinite;
   color: #2bff00;
   cursor: pointer;
+  z-index: 1;
 }
 .main-banner .hero-banner .right-hero-banner .content-container {
   display: flex;
@@ -178,8 +178,10 @@ body {
   border-top-left-radius: 10px;
   transition: border 0.2s ease-in-out;
   animation: slideRight 2s ease-in 1.5s forwards;
+  transition: border 0.6 ease-in-out;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-first-content:hover {
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-first-content:hover img {
+  border-top-left-radius: 10px;
   border-left: 2px solid #2bff00;
   border-top: 2px solid #2bff00;
 }
@@ -191,6 +193,7 @@ body {
   max-width: 100%;
   margin: auto;
   height: inherit;
+  transition: border 0.6 ease-in-out;
   animation: slideDown 2s ease-in 1.5s forwards;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .slide {
@@ -201,11 +204,7 @@ body {
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .slide img {
   height: 40vh;
-  width: 20.8rem;
-}
-.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .first-image-container {
-  height: inhirit;
-  width: 100%;
+  width: 20.9rem;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .first-image-container img {
   background-size: cover;
@@ -214,19 +213,22 @@ body {
   border-top-right-radius: 10px;
   transition: border 0.2s ease-in-out;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .second-image-container {
-  height: inherit;
-  width: inherit;
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .first-image-container:hover img {
+  border-top-right-radius: 10px;
+  border-right: 2px solid #2bff00;
+  border-top: 2px solid #2bff00;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .second-image-container img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
   transition: border 0.2s ease-in-out;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .third-image-container {
-  border: 2px solid black;
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .second-image-container:hover img {
+  border-top-right-radius: 10px;
+  border-right: 2px solid #2bff00;
+  border-top: 2px solid #2bff00;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .third-image-container img {
   background-size: cover;
@@ -234,6 +236,11 @@ body {
   background-repeat: no-repeat;
   border-top-right-radius: 10px;
   transition: border 0.2s ease-in-out;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .third-image-container:hover img {
+  border-top-right-radius: 10px;
+  border-right: 2px solid #2bff00;
+  border-top: 2px solid #2bff00;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination {
   display: flex;
@@ -243,12 +250,17 @@ body {
   left: 9rem;
   z-index: 1;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-1.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-2.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot3.active {
-  background-color: #333;
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  background-color: #bbb;
+  border-radius: 50%;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content:hover {
-  border-top: 2px solid #2bff00;
-  border-right: 2px solid #2bff00;
+.main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-1.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-2.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-3.active {
+  background-color: #2bff00;
+  border-radius: 50%;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .second-layer {
   display: grid;
@@ -287,6 +299,11 @@ body {
 .main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content:hover {
   border-right: 2px solid #2bff00;
   border-bottom: 2px solid #2bff00;
+}
+.main-banner .about-me {
+  height: 70vh;
+  width: 100%;
+  background-color: white;
 }
 
 @keyframes slideUp {

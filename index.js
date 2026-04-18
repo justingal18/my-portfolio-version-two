@@ -159,45 +159,9 @@ for (let i = 1; i <= 3; i++) {
         dotSpan.onclick = () => goToSlide(2);
     }
     
-    dotSpan.style.display = 'inline-block'
-    dotSpan.style.width = '10px';
-    dotSpan.style.height = '10px';
-    dotSpan.style.margin = '3px';
-    dotSpan.style.backgroundColor = '#070707';
-    dotSpan.style.borderRadius = '50%';
-    dotSpan.style.cursor = 'pointer';
+
     dot.push(dotSpan);
 };
-
-
-// Logic behind of Image Horizontal Slider
-let currentIndex = 0;
-
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot')
-
-function showSlide(index) {
-    if (index >= slides.length) { currentIndex = 0; }
-    if (index < 0) { currentIndex = slides.length - 1; }
-
-    slides.forEach(slide => slide.classList.remove('active'));
-    dots.forEach(dot => dot.classList.remove('active'));
-
-    slides[currentIndex].classList.add('active');
-    dots[currentIndex].classList.add('active');
-};
-
-function changeSlide(direction) {
-    currentIndex += direction;
-    showSlide(currentIndex);
-}
-
-function goToSlide(index) {
-    currentIndex = index;
-    showSlide(currentIndex);
-}
-
-setInterval(() => changeSlide(1), 3000)
 
 const dotPagination = createElement('section', {
     id: 'dot-pagination',
@@ -235,7 +199,7 @@ const heroHeading = createElement('h2', {
 const subHeading = createElement('p', {
     id: 'sub-heading',
     classList: ['sub-heading'],
-    textContent: 'I create responsive and user-friendly websites.',
+    textContent: 'I create a responsive and user-friendly websites.',
 });
 
 const availableStatusContainer = createElement('section', {
@@ -269,11 +233,18 @@ goDownIcon.addEventListener('click', () => {
     });
 });
 
+// About Me Section (Kindly use tailwind for setting up its design)
+
+const aboutMe = createElement('section', {
+    id: 'about-me',
+    classList: ['about-me', 'about-me-section']
+});
+
 // Append sections to the body and to its respective parent sections
 
 // Header Section
 document.body.append(main);
-main.append(headerSection, heroBanner);
+main.append(headerSection, heroBanner, aboutMe);
 
 // Navigation Section
 headerSection.append(companyName, navSection, ctnBtn);
@@ -298,11 +269,43 @@ firstLayerFirstContent.append(firstLeftLayerImage)
 
 firstLayerSecondContent.append(firstImageContainer, secondImageContainer, thirdImageContainer, dotPagination);
 
-firstImageContainer.append(firstLayerRightFirstImage)
-secondImageContainer.append(firstLayerRightSecondImage)
-thirdImageContainer.append(firstLayerRightThirdImage)
+firstImageContainer.append(firstLayerRightFirstImage);
+secondImageContainer.append(firstLayerRightSecondImage);
+thirdImageContainer.append(firstLayerRightThirdImage);
 
 dotPagination.append(...dot);
 
 secondLayer.append(secondLayerFirstContent, secondLayerSecondContent);
+
+// About me append section
+aboutMe.append();
+
+// Logic behind of Image Horizontal Slider
+let currentIndex = 0;
+
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot')
+
+function showSlide(index) {
+    if (index >= slides.length) { currentIndex = 0; }
+    if (index < 0) { currentIndex = slides.length - 1; }
+
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    slides[currentIndex].classList.add('active');
+    dots[currentIndex].classList.add('active');
+};
+
+function changeSlide(direction) {
+    currentIndex += direction;
+    showSlide(currentIndex);
+}
+
+function goToSlide(index) {
+    currentIndex = index;
+    showSlide(currentIndex);
+}
+
+setInterval(() => changeSlide(1), 3000)
 
