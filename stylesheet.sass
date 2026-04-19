@@ -78,6 +78,7 @@ body
         display: grid
         grid-template-columns: 1fr 1fr
         margin-top: 6rem
+        height: 89.6vh
         .left-hero-banner
             display: flex
             flex-direction: column
@@ -118,7 +119,7 @@ body
             .sub-heading
                 font-size: 1.25rem
                 color: #2bff00
-                padding-left: 3.45rem
+                padding-left: 4.8rem
                 margin-top: .7rem
             .go-down-icon
                 border: 2px solid rgba(0, 0, 0, 0.5)
@@ -234,6 +235,7 @@ body
                                 background-color: #bbb
                                 border-radius: 50%
                                 cursor: pointer
+                                overflow: hidden
                             .dot-1, .dot-2, .dot-3
                                 &.active
                                     height: 12px
@@ -247,6 +249,8 @@ body
                     width: 100%
                     column-gap: .5rem
                     .second-layer-first-content
+                        position: relative
+                        overflow: hidden
                         height: 100%
                         width: inherit
                         background-image: url('src/img/pexels-goumbik-574087.jpg')
@@ -254,12 +258,32 @@ body
                         background-position: center
                         background-repeat: no-repeat
                         border-bottom-left-radius: 10px
-                        transition: border 0.2s ease-in-out
                         animation: slideUp 2s ease-in 1.5s forwards
-                    .second-layer-first-content:hover
-                        border-left: 2px solid #2bff00
-                        border-bottom: 2px solid #2bff00
+                    .second-layer-first-content::before
+                        content: ""
+                        position: absolute
+                        bottom: 0
+                        right: 0
+                        height: 2px
+                        width: 0
+                        background: #2bff00
+                        transition: width 0.5s ease 0.5s
+                    .second-layer-first-content::after
+                        content: ""
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        width: 2px
+                        height: 0
+                        background: #2bff00
+                        transition: height 0.5s ease 1s
+                    .second-layer-first-content:hover::before
+                        width: 100%
+                    .second-layer-first-content:hover::after
+                        height: 100%
                     .second-layer-second-content
+                        position: relative
+                        overflow: hidden
                         height: 100%
                         width: inherit
                         background-image: url('src/img/pexels-rccbtn-15406294.jpg')
@@ -267,13 +291,31 @@ body
                         background-position: center
                         background-repeat: no-repeat
                         border-bottom-right-radius: 10px
-                        transition: border 0.2s ease-in-out
                         animation: slideLeft 2s ease-in 1.5s forwards
-                    .second-layer-second-content:hover
-                        border-right: 2px solid #2bff00
-                        border-bottom: 2px solid #2bff00
+                    .second-layer-second-content::before
+                        content: ""
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        height: 2px
+                        width: 0
+                        background: #2bff00
+                        transition: width 0.5s ease 0.5s
+                    .second-layer-second-content::after
+                        content: ""
+                        position: absolute
+                        bottom: 0
+                        right: 0
+                        width: 2px
+                        height: 0
+                        background: #2bff00
+                        transition: height 0.5s ease 1s
+                    .second-layer-second-content:hover::before
+                        width: 100%
+                    .second-layer-second-content:hover::after
+                        height: 100%
     .about-me
-        height: 300vh
+        height: 60vh
         width: 100%
         background-color: white
 

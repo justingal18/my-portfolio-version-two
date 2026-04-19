@@ -301,6 +301,7 @@ function changeSlide(direction) {
     showSlide(currentIndex);
 }
 
+// For Button Logic
 function goToSlide(index) {
     currentIndex = index;
     showSlide(currentIndex);

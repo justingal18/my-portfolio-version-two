@@ -87,6 +87,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   margin-top: 6rem;
+  height: 89.6vh;
 }
 .main-banner .hero-banner .left-hero-banner {
   display: flex;
@@ -133,7 +134,7 @@ body {
 .main-banner .hero-banner .left-hero-banner .sub-heading {
   font-size: 1.25rem;
   color: #2bff00;
-  padding-left: 3.45rem;
+  padding-left: 4.8rem;
   margin-top: 0.7rem;
 }
 .main-banner .hero-banner .left-hero-banner .go-down-icon {
@@ -260,6 +261,7 @@ body {
   background-color: #bbb;
   border-radius: 50%;
   cursor: pointer;
+  overflow: hidden;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-1.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-2.active, .main-banner .hero-banner .right-hero-banner .content-container .first-layer .first-layer-second-content .dot-pagination .dot-3.active {
   height: 12px;
@@ -276,6 +278,8 @@ body {
        column-gap: 0.5rem;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content {
+  position: relative;
+  overflow: hidden;
   height: 100%;
   width: inherit;
   background-image: url("src/img/pexels-goumbik-574087.jpg");
@@ -283,14 +287,37 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   border-bottom-left-radius: 10px;
-  transition: border 0.2s ease-in-out;
   animation: slideUp 2s ease-in 1.5s forwards;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content:hover {
-  border-left: 2px solid #2bff00;
-  border-bottom: 2px solid #2bff00;
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: #2bff00;
+  transition: width 0.5s ease 0.5s;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2px;
+  height: 0;
+  background: #2bff00;
+  transition: height 0.5s ease 1s;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content:hover::before {
+  width: 100%;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content:hover::after {
+  height: 100%;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content {
+  position: relative;
+  overflow: hidden;
   height: 100%;
   width: inherit;
   background-image: url("src/img/pexels-rccbtn-15406294.jpg");
@@ -298,15 +325,36 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   border-bottom-right-radius: 10px;
-  transition: border 0.2s ease-in-out;
   animation: slideLeft 2s ease-in 1.5s forwards;
 }
-.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content:hover {
-  border-right: 2px solid #2bff00;
-  border-bottom: 2px solid #2bff00;
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #2bff00;
+  transition: width 0.5s ease 0.5s;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 2px;
+  height: 0;
+  background: #2bff00;
+  transition: height 0.5s ease 1s;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content:hover::before {
+  width: 100%;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-second-content:hover::after {
+  height: 100%;
 }
 .main-banner .about-me {
-  height: 300vh;
+  height: 60vh;
   width: 100%;
   background-color: white;
 }
