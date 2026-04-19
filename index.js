@@ -54,7 +54,6 @@ items.forEach((text, index) => {
     const itemLink = createElement('a', {
         classList: ['menu'],
         href: `#${text.key}`,
-        target: '_blank',
         textContent: text.label,
     });
 
@@ -79,7 +78,7 @@ const ctnBtn = createElement('button', {
 });
 
 const heroBanner = createElement('section', {
-    id: 'hero-banner',
+    id: 'home',
     classList: ['hero-banner'],
 });
 
@@ -235,7 +234,7 @@ goDownIcon.addEventListener('click', () => {
 // About Me Section (Kindly use tailwind for setting up its design)
 
 const aboutMe = createElement('section', {
-    id: 'about-me',
+    id: 'about',
     classList: ['about-me', 'about-me-section']
 });
 
