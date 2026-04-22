@@ -3,13 +3,11 @@
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  scroll-height: 90vh;
 }
 
 body {
   font-family: "Arial, sans-serif";
-  background-color: #929292;
-  height: 500vh;
+  background-color: rgba(197, 147, 147, 0.3);
 }
 
 .main-banner {
@@ -21,16 +19,17 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 3.5rem;
-  width: 80rem;
+  height: 3.9rem;
+  width: 95.4rem;
   padding: 0 1.5rem;
+  border: 1px solid #2bff00;
   border-radius: 15px;
   background-color: #302929;
-  margin: 1rem auto 0 auto;
+  margin: 0.7rem auto 0 auto;
   animation: slideDown 2s ease-in 1s forwards;
   position: fixed;
-  left: 19.5rem;
-  z-index: 1;
+  left: 12rem;
+  z-index: 2;
 }
 .main-banner .header-section .nav-section .nav-list {
   display: flex;
@@ -85,8 +84,12 @@ body {
 .main-banner .hero-banner {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-top: 6rem;
   height: 89.6vh;
+  width: 70vw;
+  margin: 5.5rem auto 2rem auto;
+  background-color: #302929;
+  border-radius: 15px;
+  z-index: 1;
 }
 .main-banner .hero-banner .left-hero-banner {
   display: flex;
@@ -101,7 +104,7 @@ body {
 .main-banner .hero-banner .left-hero-banner .available-status-container {
   display: flex;
   flex-direction: row;
-  background-color: rgba(48, 41, 41, 0.8);
+  background-color: rgba(75, 72, 72, 0.8);
   align-self: flex-start;
   width: 7.5rem;
   border-radius: 10px;
@@ -109,7 +112,7 @@ body {
   gap: 0.5rem;
   margin-bottom: 1rem;
   position: relative;
-  left: 20rem;
+  left: 7rem;
   cursor: pointer;
 }
 .main-banner .hero-banner .left-hero-banner .available-status-container .available-status-icon {
@@ -124,16 +127,18 @@ body {
   font-weight: 500;
 }
 .main-banner .hero-banner .left-hero-banner .hero-heading {
-  padding-left: 20rem;
+  padding-left: 6.9rem;
   width: 100%;
   font-size: 4rem;
   color: white;
   align-self: center;
 }
 .main-banner .hero-banner .left-hero-banner .sub-heading {
+  position: absolute;
+  top: 33rem;
+  left: 6.9rem;
   font-size: 1.25rem;
   color: #2bff00;
-  padding-left: 4.8rem;
   margin-top: 0.7rem;
 }
 .main-banner .hero-banner .left-hero-banner .go-down-icon {
@@ -144,7 +149,7 @@ body {
   font-weight: 500;
   position: absolute;
   top: 87vh;
-  left: 58.5rem;
+  left: 42.5rem;
   animation: bounce 1s infinite;
   color: #2bff00;
   cursor: pointer;
@@ -154,7 +159,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  left: 3rem;
+  left: 0;
   top: 6.5rem;
   height: 60vh;
   width: 62vh;
@@ -298,6 +303,9 @@ body {
   background: #2bff00;
   transition: width 0.5s ease 0.5s;
 }
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content::before img {
+  border-bottom-left-radius: 10px;
+}
 .main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content::after {
   content: "";
   position: absolute;
@@ -307,6 +315,9 @@ body {
   height: 0;
   background: #2bff00;
   transition: height 0.5s ease 1s;
+}
+.main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content::after img {
+  border-bottom-left-radius: 10px;
 }
 .main-banner .hero-banner .right-hero-banner .content-container .second-layer .second-layer-first-content:hover::before {
   width: 100%;
@@ -353,11 +364,57 @@ body {
   height: 100%;
 }
 .main-banner .about-me {
-  margin: 0 auto;
-  height: 70vh;
-  width: 90%;
-  background-color: white;
+  display: grid;
+  grid-template-columns: 30vw 1fr;
+  position: absolute;
+  top: 55rem;
+  left: 12rem;
+  align-content: center;
+  height: 65vh;
+  width: 80%;
+  padding-top: 3rem;
+  background-color: #38545f;
   border-radius: 15px;
+}
+.main-banner .about-me .aboutMeLeftContainer {
+  height: 50vh;
+  width: 100%;
+}
+.main-banner .about-me .aboutMeLeftContainer img {
+  position: absolute;
+  top: 10rem;
+  left: 7rem;
+  border-radius: 50%;
+  background-color: rgba(217, 255, 0, 0.7254901961);
+  animation: spin 5s ease-in-out 3s forwards;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.main-banner .about-me .aboutMeRightContainer {
+  display: flex;
+  border-left: 2px solid #2bff00;
+}
+.main-banner .about-me .aboutMeRightContainer .sectionTitle {
+  color: white;
+  position: absolute;
+  top: 11rem;
+  left: 42rem;
+}
+.main-banner .about-me .aboutMeRightContainer .selfIntroduction {
+  align-content: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  margin: 0 auto;
+  line-height: 2rem;
+  width: 35vw;
+  margin: 0 auto;
 }
 
 @keyframes slideUp {

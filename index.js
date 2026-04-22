@@ -31,7 +31,7 @@ const items = [
     {key: 'about', label: 'About', icon: 'person'}, 
     {key: 'projects', label: 'Projects', icon: 'folder'}, 
     {key: 'contact', label: 'Contact', icon: 'email'}
-]; // Placeholder for nav items
+];
 
 items.forEach((text, index) => {
     const icon = createElement('img', {
@@ -197,7 +197,7 @@ const heroHeading = createElement('h2', {
 const subHeading = createElement('p', {
     id: 'sub-heading',
     classList: ['sub-heading'],
-    textContent: 'I create a responsive and user-friendly websites.',
+    textContent: 'I can create a responsive and user-friendly websites.',
 });
 
 const availableStatusContainer = createElement('section', {
@@ -231,12 +231,54 @@ goDownIcon.addEventListener('click', () => {
     });
 });
 
-// About Me Section (Kindly use tailwind for setting up its design)
-
+// About Me Section
 const aboutMe = createElement('section', {
     id: 'about',
     classList: ['about-me', 'about-me-section']
 });
+
+const aboutMeLeftContainer = createElement('div', {
+    id: 'aboutMeLeftContainer',
+    classList: ['aboutMeLeftContainer']
+});
+
+const aboutMeRightContainer = createElement('div', {
+    id: 'aboutMeRightContainer',
+    classList: ['aboutMeRightContainer']
+});
+
+const myPicture = createElement('img', {
+    src: 'src/img/unnamed-no-bg.png',
+    alt: "My picture"
+});
+
+const sectionTitle = createElement('h1', {
+    classList: ['sectionTitle'],
+    textContent: 'About Me'
+});
+
+const selfIntroduction = createElement('p', {
+    id: 'selfIntroduction',
+    classList: ['selfIntroduction'],
+    textContent: 'I’m a web developer focused on building responsive and user-friendly web applications using modern technologies like HTML, CSS, JavaScript, React, PHP, Laravel, MySQL, and REST API. I enjoy turning ideas into clean, functional interfaces while continuously improving my skills in both frontend and backend development. My goal is to create efficient and accessible digital experiences that provide real value to users.'
+});
+// Carousel
+const carouselContainer = createElement('section', {
+    id: 'carouselContainer',
+    classList: ['carouselContainer']
+});
+
+const carouselGroupOneContainer = createElement('div', {
+    id: 'group-1',
+    classList: ['group-1']
+});
+
+const carouselGroupTwoContainer = createElement('div', {
+    id: 'group-2',
+    classList: ['group-2']
+});
+
+
 
 // Append sections to the body and to its respective parent sections
 
@@ -276,9 +318,15 @@ dotPagination.append(...dot);
 secondLayer.append(secondLayerFirstContent, secondLayerSecondContent);
 
 // About me append section
-aboutMe.append();
+aboutMe.append(aboutMeLeftContainer, aboutMeRightContainer);
+aboutMeLeftContainer.append(myPicture);
+aboutMeRightContainer.append(sectionTitle, selfIntroduction);
 
-// Logic behind of Image Horizontal Slider
+
+// Carousel
+
+
+// Logic behind of slide show
 let currentIndex = 0;
 
 const slides = document.querySelectorAll('.slide');
