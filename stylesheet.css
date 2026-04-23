@@ -416,6 +416,14 @@ body {
   width: 35vw;
   margin: 0 auto;
 }
+.main-banner .carouselContainer {
+  height: 27vh;
+  width: 100%;
+  margin: 32.8rem auto 0 auto;
+  border-radius: 15px;
+  background-color: rgba(48, 41, 41, 0.2);
+  z-index: 3;
+}
 
 @keyframes slideUp {
   0% {

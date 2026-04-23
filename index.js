@@ -262,21 +262,29 @@ const selfIntroduction = createElement('p', {
     classList: ['selfIntroduction'],
     textContent: 'I’m a web developer focused on building responsive and user-friendly web applications using modern technologies like HTML, CSS, JavaScript, React, PHP, Laravel, MySQL, and REST API. I enjoy turning ideas into clean, functional interfaces while continuously improving my skills in both frontend and backend development. My goal is to create efficient and accessible digital experiences that provide real value to users.'
 });
+
 // Carousel
 const carouselContainer = createElement('section', {
     id: 'carouselContainer',
     classList: ['carouselContainer']
 });
 
-const carouselGroupOneContainer = createElement('div', {
+const carouselGroupOneContainer = createElement('ul', {
     id: 'group-1',
     classList: ['group-1']
 });
 
-const carouselGroupTwoContainer = createElement('div', {
+const carouselGroupTwoContainer = createElement('ul', {
     id: 'group-2',
     classList: ['group-2']
 });
+
+
+const keywords = {
+    groupOne: ["Responsive Web Design", "Frontend Development", "Performance Optimization", "Cross-Browser Compatibility", "API Integration", "User Experience (UX) Design", ],
+    groupTwo: ["Clean & Maintainable COde", "SEO Optimization", "Full-Stack Development", "Component-Based Architecture", "State Management", "RESTful Services"]
+};
+
 
 
 
@@ -284,7 +292,7 @@ const carouselGroupTwoContainer = createElement('div', {
 
 // Header Section
 document.body.append(main);
-main.append(headerSection, heroBanner, aboutMe);
+main.append(headerSection, heroBanner, aboutMe, carouselContainer);
 
 // Navigation Section
 headerSection.append(companyName, navSection, ctnBtn);
@@ -324,7 +332,7 @@ aboutMeRightContainer.append(sectionTitle, selfIntroduction);
 
 
 // Carousel
-
+carouselContainer.append(carouselGroupOneContainer, carouselGroupTwoContainer)
 
 // Logic behind of slide show
 let currentIndex = 0;
